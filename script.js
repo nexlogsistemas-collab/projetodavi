@@ -489,4 +489,21 @@ const initReviews = () => {
 
 initReviews();
 
+// WhatsApp click handler and redirect
+document.addEventListener('click', (e) => {
+    // Find if the click was on a WhatsApp link
+    const waLink = e.target.closest('a[href*="wa.me"], a[href*="whatsapp.com"]');
+    
+    if (waLink) {
+        // Only redirect if it's not already on the thank you page
+        if (!window.location.pathname.includes('obrigado.html')) {
+            // We want to give the browser a tiny bit of time to start opening the WhatsApp link 
+            // especially if it doesn't have target="_blank" (though most should)
+            setTimeout(() => {
+                window.location.href = 'obrigado.html';
+            }, 500);
+        }
+    }
+});
+
 

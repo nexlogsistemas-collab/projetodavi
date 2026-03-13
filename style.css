@@ -211,18 +211,23 @@ p {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 5%;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    padding: 10px 5%; /* Reduzi o padding vertical para compensar a logo maior */
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     z-index: 1000;
     transition: var(--transition);
-    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+    border-bottom: 2px solid var(--border-color);
 }
 
 .navbar.scrolled {
-    padding: 15px 5%;
-    box-shadow: var(--shadow-sm);
+    padding: 5px 5%;
+    box-shadow: var(--shadow-md);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.navbar.scrolled .logo-img {
+    height: 60px;
 }
 
 .nav-container {
@@ -1131,9 +1136,22 @@ p {
 }
 
 .logo-img {
-    height: 45px;
+    height: 75px; /* Aumentei significativamente o tamanho */
     width: auto;
     object-fit: contain;
+    transition: var(--transition);
+    filter: drop-shadow(0 4px 8px rgba(133, 14, 53, 0.1));
+    border-radius: 12px;
+}
+
+.logo:hover .logo-img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 60px; /* Tamanho ajustado para mobile */
+    }
 }
 
 

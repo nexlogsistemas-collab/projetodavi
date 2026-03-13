@@ -244,29 +244,7 @@ faqSearchInput?.addEventListener('input', (event) => {
     filterFaq(event.target.value);
 });
 
-// Theme toggle
-const themeToggle = document.querySelector('.theme-toggle');
-const setTheme = (mode) => {
-    if (!themeToggle) return;
-    if (mode === 'dark') {
-        document.body.classList.add('dark-mode');
-        themeToggle.querySelector('i')?.classList.replace('fa-moon', 'fa-sun');
-    } else {
-        document.body.classList.remove('dark-mode');
-        themeToggle.querySelector('i')?.classList.replace('fa-sun', 'fa-moon');
-    }
-    localStorage.setItem('theme', mode);
-};
 
-const savedTheme = localStorage.getItem('theme');
-const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
-
-themeToggle?.addEventListener('click', () => {
-    const isDark = document.body.classList.contains('dark-mode');
-    setTheme(isDark ? 'light' : 'dark');
-});
 
 // Confetti effect
 const confettiCanvas = document.getElementById('confetti-canvas');
@@ -281,7 +259,7 @@ const createConfetti = () => {
     confettiCanvas.height = window.innerHeight;
     confettiParticles = [];
 
-    const colors = ['#6ADEA8', '#F3EBE1', '#D4A373', '#F9A826', '#25D366'];
+    const colors = ['#850e35', '#ee6983', '#ffc4c4', '#fff5e4'];
 
     for (let i = 0; i < 120; i++) {
         confettiParticles.push({
@@ -498,7 +476,7 @@ const initReviews = () => {
         .then(data => loadReviews(Array.isArray(data) ? data : sampleReviews))
         .catch(() => loadReviews(sampleReviews));
 
-    console.log(`%c[Automation] Place ID da Dra. Grazy: ${GOOGLE_PLACE_ID}`, 'color: #798E75; font-weight: bold;');
+    console.log(`%c[Automation] Place ID da Dra. Grazy: ${GOOGLE_PLACE_ID}`, 'color: #850e35; font-weight: bold;');
 };
 
 initReviews();

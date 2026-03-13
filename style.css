@@ -223,14 +223,14 @@ p {
 }
 
 .navbar.scrolled {
-    padding: 5px 5%;
+    padding: 2px 5%;
     box-shadow: var(--shadow-md);
     background: rgba(255, 255, 255, 0.98);
-    min-height: 80px; /* Reduz a barra ao rolar */
+    min-height: 60px; /* Barra bem fina ao rolar */
 }
 
 .navbar.scrolled .logo-img {
-    height: 80px; /* Logo diminui ao rolar para não atrapalhar */
+    height: 60px; /* Logo diminui ainda mais ao rolar */
 }
 
 .nav-container {
@@ -1157,18 +1157,25 @@ p {
 }
 
 @media (max-width: 768px) {
-    .logo-img {
-        height: 80px; /* Tamanho razoável para mobile */
-    }
     .navbar {
-        min-height: auto; /* Remove a altura mínima gigante no mobile */
-        padding: 5px 15px;
+        min-height: 70px !important; /* Força altura pequena no mobile */
+        height: 70px !important;
+        padding: 0 15px !important;
+    }
+    .logo-img {
+        height: 55px !important; /* Logo menor para caber na barra fina do celular */
+        margin: 0 !important;
+    }
+    .navbar.scrolled {
+        min-height: 60px !important;
+        height: 60px !important;
     }
     .navbar.scrolled .logo-img {
-        height: 60px; /* Ainda menor ao rolar no mobile */
+        height: 45px !important;
     }
     .nav-container {
-        gap: 10px;
+        gap: 0 !important;
+        height: 100%;
     }
 }
 

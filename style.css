@@ -1136,11 +1136,12 @@ p {
 }
 
 .logo-img {
-    height: 75px; /* Aumentei significativamente o tamanho */
+    height: 90px; /* Aumentei ainda mais conforme solicitado */
     width: auto;
     object-fit: contain;
     transition: var(--transition);
-    filter: brightness(0.6) contrast(1.2) drop-shadow(0 2px 4px rgba(133, 14, 53, 0.15));
+    /* Filtro para transformar a logo em Rosa (#850e35) e garantir contraste */
+    filter: sepia(1) saturate(5) hue-rotate(300deg) brightness(0.7) contrast(1.2) drop-shadow(0 2px 4px rgba(133, 14, 53, 0.15));
     border-radius: 8px;
 }
 
@@ -1150,7 +1151,7 @@ p {
 
 @media (max-width: 768px) {
     .logo-img {
-        height: 60px; /* Tamanho ajustado para mobile */
+        height: 70px; /* Ajustado para mobile também */
     }
 }
 

@@ -1140,8 +1140,8 @@ p {
     width: auto;
     object-fit: contain;
     transition: var(--transition);
-    filter: drop-shadow(0 4px 8px rgba(133, 14, 53, 0.1));
-    border-radius: 12px;
+    filter: brightness(0.6) contrast(1.2) drop-shadow(0 2px 4px rgba(133, 14, 53, 0.15));
+    border-radius: 8px;
 }
 
 .logo:hover .logo-img {

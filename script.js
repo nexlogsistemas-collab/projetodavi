@@ -1,5 +1,13 @@
 // script.js
 
+// Cache-busting: Force reload on bfcache (Back/Forward Cache) for Safari and mobile devices
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+        window.location.reload();
+    }
+});
+
+
 // Navbar scroll effect
 const navbar = document.querySelector('.navbar');
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -468,7 +476,7 @@ const GOOGLE_PLACE_ID = 'ChIJrb3YGH0i0EERlDi2ukYC9VI';
 
 // Busca local (reviews.json) ou usa o sample interno
 const initReviews = () => {
-    fetch('reviews.json')
+    fetch(`reviews.json?t=${new Date().getTime()}`)
         .then(r => {
             if (!r.ok) throw new Error('No reviews.json');
             return r.json();

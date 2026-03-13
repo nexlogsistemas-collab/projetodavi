@@ -210,47 +210,38 @@ p {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px 5%;
+    padding: 15px 5%;
     background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     z-index: 1000;
     transition: var(--transition);
-    border-bottom: 3px solid var(--primary-color);
-    min-height: 200px; /* Altura generosa para a logo e botões */
+    border-bottom: 2px solid var(--border-color);
     display: flex;
     align-items: center;
 }
 
 .navbar.scrolled {
-    padding: 2px 5%;
+    padding: 10px 5%;
     box-shadow: var(--shadow-md);
-    background: rgba(255, 255, 255, 0.98);
-    min-height: 60px; /* Barra bem fina ao rolar */
-}
-
-.navbar.scrolled .logo-img {
-    height: 60px; /* Logo diminui ainda mais ao rolar */
 }
 
 .nav-container {
-    max-width: 1600px; /* Espaço máximo */
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 100px; /* Gap ENORME para não ter interferência */
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    color: var(--primary-dark);
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    color: var(--primary-color);
+    letter-spacing: -0.5px;
 }
+
 
 .logo i {
     color: var(--primary-light);
@@ -1140,42 +1131,12 @@ p {
   transition: width 0.2s ease;
 }
 
-.logo-img {
-    height: 180px; /* BEM GRANDE como solicitado */
-    width: auto;
-    object-fit: contain;
-    transition: var(--transition);
-    /* FILTRO ROSA REFORÇADO PARA #850e35 (converte qualquer cor original para o rosa alvo) */
-    filter: brightness(0) saturate(100%) invert(14%) sepia(85%) saturate(5152%) hue-rotate(326deg) brightness(91%) contrast(100%) drop-shadow(0 4px 15px rgba(133, 14, 53, 0.3));
-    border-radius: 0;
-    display: block;
-    margin: -20px 0; /* Ajuste para centralizar no espaço do nav */
-}
-
-.logo:hover .logo-img {
-    transform: scale(1.05);
-}
-
 @media (max-width: 768px) {
     .navbar {
-        min-height: 70px !important; /* Força altura pequena no mobile */
-        height: 70px !important;
-        padding: 0 15px !important;
+        padding: 10px 5%;
     }
-    .logo-img {
-        height: 55px !important; /* Logo menor para caber na barra fina do celular */
-        margin: 0 !important;
-    }
-    .navbar.scrolled {
-        min-height: 60px !important;
-        height: 60px !important;
-    }
-    .navbar.scrolled .logo-img {
-        height: 45px !important;
-    }
-    .nav-container {
-        gap: 0 !important;
-        height: 100%;
+    .logo {
+        font-size: 1.4rem;
     }
 }
 
